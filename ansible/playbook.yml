@@ -1,0 +1,13 @@
+---
+- name: installation de serveur
+  hosts: web
+  remote_user: root
+  
+
+  tasks:
+    
+    - name: remove the git
+      yum:
+        name: git
+        state: absent
+...

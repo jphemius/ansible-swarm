@@ -1,0 +1,14 @@
+---
+
+  - name: demarrage service docker
+    service: name=docker state=started
+  - name: Restart a container
+    docker_container:
+      name: httpd
+      image: docker.io/httpd
+      state: started
+      ports:
+       - "80:80"
+  - name: ajout de fichier dans tmp
+    copy: src=./test.txt dest=/tmp/test.txt           
+...
